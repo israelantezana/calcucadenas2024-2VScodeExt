@@ -10,6 +10,10 @@ describe("Calculadora de cadenas", () => {
   it("cadena de dos numeros", () => {
     expect(sumar("1,2")).toEqual(3);
   });
+
+  it("cadena de mas de dos numeros", () => {
+    expect(sumar("1,2,3,4")).toEqual(10);
+  });
 });
 
 function sumar(cadena) {

@@ -6,11 +6,20 @@ describe("Calculadora de cadenas", () => {
   it("cadena de un numero retorna el mismo numero", () => {
     expect(sumar("1")).toEqual(1);
   });
+
+  it("cadena de dos numeros", () => {
+    expect(sumar("1,2")).toEqual(3);
+  });
 });
 
 function sumar(cadena) {
   if (cadena === "") {
     return 0;
   }
-  return Number.parseInt(cadena);
+  let numeros = cadena.split(",");
+  let total = 0;
+  numeros.forEach((numero) => {
+    total += Number.parseInt(numero);
+  });
+  return total;
 }
